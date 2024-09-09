@@ -43,23 +43,23 @@ npx prisma migrate dev
 ## 📋 Business Rules and Requirements
 
 ### Functional Requirements
-- [ ] It should be able to create a pet;
-- [ ] It should be able to go get all available pets in a city;
+- [ ] It should be able to add a pet;
+- [ ] It should be able to get all available pets in a city;
 - [ ] It should be able to filter pets by it's carecteristics;
-- [ ] It should be able to show details of a pet for adotion;
-- [ ] It should be able to register as a NGO (Non-Governamental Organization);
-- [ ] It should be able to authenticate as a NGO;
+- [ ] It should be able to show details of a pet for adoption;
+- [x] It should be able to register as a NGO (Non-Governamental Organization);
+- [x] It should be able to authenticate as a NGO;
 
 ### Business Rules
-- [ ] To fetch all pets, a city must be provied;
-- [ ] A NGO must have a address and a WhatsApp phone number;
+- [ ] To fetch all pets, a state and a city must be provied;
+- [ ] All filters, besides the city ans state, are optional;
+- [x] A NGO must have a address and a WhatsApp phone number;
 - [ ] A pet must be connected with a NGO;
-- [ ] The user who wishes to adopt, must contact the NGO by their WhatsApp number;
-- [ ] All filters, besides the city, are optional;
-- [ ] For a NGO access the app as admin, they must be authenticated;
+- [x] The user who wishes to adopt, must contact the NGO by their WhatsApp number;
+- [x] For a NGO access the app as admin, they must be authenticated;
 
 ### Non Functional Requirements
-- [ ] The user password must be encypted;
-- [ ] All application data must be persisted on a postgreSQL database;
+- [x] The user password must be encypted;
+- [x] All application data must be persisted on a postgreSQL database;
 - [ ] All data listed should be paginated with 20 itens by page;
-- [ ] The user must be identified by a JWT (JSON Web Token);
+- [x] The user must be identified by a JWT (JSON Web Token);
