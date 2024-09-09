@@ -26,7 +26,7 @@ model User {
     whatsapp_number String
     created_at      DateTime @default(now())
 
-    Pet Pet[]
+    pet Pet[]
 
     @@map("users")
 }
@@ -42,10 +42,10 @@ model Pet {
     independency String
     environment  String
 
-    PetRequirements PetRequirements[]
-    PetPictures     PetPictures[]
+    petRequirements PetRequirements[]
+    petPictures     PetPictures[]
 
-    User    User   @relation(fields: [user_id], references: [id])
+    user    User   @relation(fields: [user_id], references: [id])
     user_id String
 
     @@map("pets")
@@ -55,7 +55,7 @@ model PetRequirements {
     id          String @id @default(uuid())
     description String
 
-    Pet    Pet    @relation(fields: [pet_id], references: [id])
+    pet    Pet    @relation(fields: [pet_id], references: [id])
     pet_id String
 
     @@map("pets_requirements")
@@ -65,7 +65,7 @@ model PetPictures {
     id    String @id @default(uuid())
     image String
 
-    Pet   Pet    @relation(fields: [pt_id], references: [id])
+    pet   Pet    @relation(fields: [pt_id], references: [id])
     pt_id String
 
     @@map("pets_pictures")

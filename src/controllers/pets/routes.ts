@@ -1,8 +1,12 @@
 import { FastifyInstance } from 'fastify'
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { verifyJWT } from '@/middlewares/verify-jwt'
+
+import { create } from './create'
+
 export async function petsRoutes(app: FastifyInstance) {
-	// app.post('/users', register)
-	// app.post('/sessions', authenticate)
-	// app.patch('/token/refresh', refresh)
+	// app.get('/pets', search)
+	// app.get('/pets/:id', profile)
+
+	app.post('/pets', { onRequest: [verifyJWT] }, create)
 }

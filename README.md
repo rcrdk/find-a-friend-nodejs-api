@@ -2,12 +2,17 @@
 
 TODO:
 - Create prisma seeds
+  - Three users
+  - 5 pets each
 - Create repositories
 - Create in-memory repositories
 - Create services and make unit tests
 - Create prisma repositories
 - Create controllers and make e2e tests
-- Generate insomnia json
+- Prepare and generate insomnia json
+- Submit to Rocketseat
+- Do some extras
+
 -->
 
 <!-- https://efficient-sloth-d85.notion.site/Desafio-03-0b927eb32dbd4f21ab40224ffdf6cf19 -->
@@ -40,10 +45,21 @@ npx prisma migrate dev
 <!-- GENERATE AND TEST -->
 <!-- [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=Ignite%20Node.js%3A%20Find%20a%20Friend%20API%0A&uri=https://raw.githubusercontent.com/rcrdk/find-a-friend-nodejs-api/main/insomnia.json) -->
 
-## 📋 Business Rules and Requirements
+## 📋 Business Rules and 
+
+<!--
+
+Extra: 
+- Update organization profile
+- Update pet
+- Remove pet
+- Visibility of pet
+- Get all organization pets
+
+-->
 
 ### Functional Requirements
-- [ ] It should be able to add a pet;
+- [x] It should be able to add a pet;
 - [ ] It should be able to get all available pets in a city;
 - [ ] It should be able to filter pets by it's carecteristics;
 - [ ] It should be able to show details of a pet for adoption;
@@ -54,7 +70,7 @@ npx prisma migrate dev
 - [ ] To fetch all pets, a state and a city must be provied;
 - [ ] All filters, besides the city ans state, are optional;
 - [x] A NGO must have a address and a WhatsApp phone number;
-- [ ] A pet must be connected with a NGO;
+- [x] A pet must be connected with a NGO;
 - [x] The user who wishes to adopt, must contact the NGO by their WhatsApp number;
 - [x] For a NGO access the app as admin, they must be authenticated;
 
