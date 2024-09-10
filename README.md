@@ -4,11 +4,6 @@ TODO:
 - Create prisma seeds
   - Three users
   - 5 pets each
-- Create repositories
-- Create in-memory repositories
-- Create services and make unit tests
-- Create prisma repositories
-- Create controllers and make e2e tests
 - Prepare and generate insomnia json
 - Submit to Rocketseat
 - Do some extras
@@ -60,15 +55,15 @@ Extra:
 
 ### Functional Requirements
 - [x] It should be able to add a pet;
-- [ ] It should be able to get all available pets in a city;
-- [ ] It should be able to filter pets by it's carecteristics;
+- [x] It should be able to get all available pets in a city;
+- [x] It should be able to filter pets by it's carecteristics;
 - [ ] It should be able to show details of a pet for adoption;
 - [x] It should be able to register as a NGO (Non-Governamental Organization);
 - [x] It should be able to authenticate as a NGO;
 
 ### Business Rules
-- [ ] To fetch all pets, a state and a city must be provied;
-- [ ] All filters, besides the city ans state, are optional;
+- [x] To fetch all pets, a state and a city must be provied;
+- [x] All filters, besides the city ans state, are optional;
 - [x] A NGO must have a address and a WhatsApp phone number;
 - [x] A pet must be connected with a NGO;
 - [x] The user who wishes to adopt, must contact the NGO by their WhatsApp number;

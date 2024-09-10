@@ -11,28 +11,47 @@ export class PrismaPetsRepository implements PetsRepository {
 			include: { user: true },
 		})
 
+		if (pet) pet.user.password_hash = ''
+
 		return pet
 	}
 
 	async findManyByFilters(filters: FindManyByFiltersParams) {
+		const ITEMS_BY_PAGE = 20
+		const SKIP_PREV_PAGES_ITEMS = (filters.page - 1) * ITEMS_BY_PAGE
+
 		const pets = await prisma.pet.findMany({
 			include: {
 				user: true,
 			},
 			where: {
 				user: {
-					state: filters.state,
-					city: filters.city,
+					state: {
+						equals: filters.state,
+						mode: 'insensitive',
+					},
+					city: {
+						equals: filters.city,
+						mode: 'insensitive',
+					},
 				},
 				energy: filters.energy,
 				age: filters.age,
 				size: filters.size,
 				independency: filters.independency,
+				environment: filters.environment,
 				kind_of: filters.kindOf,
 			},
+			take: ITEMS_BY_PAGE,
+			skip: SKIP_PREV_PAGES_ITEMS,
 		})
 
-		return pets
+		const petsFiltered = pets.map((pet) => {
+			pet.user.password_hash = ''
+			return pet
+		})
+
+		return petsFiltered
 	}
 
 	async create(data: Prisma.PetUncheckedCreateInput) {

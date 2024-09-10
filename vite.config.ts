@@ -8,5 +8,6 @@ export default defineConfig({
 			['src/controllers/**', './vitest-enviroment/prisma.ts'],
 		],
 		dir: 'src',
+		globals: true,
 	},
 })
