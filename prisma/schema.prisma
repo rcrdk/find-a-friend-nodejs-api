@@ -32,7 +32,7 @@ model User {
 }
 
 model Pet {
-    id           String  @id @default(uuid())
+    id           String   @id @default(uuid())
     name         String
     kind_of      PetType
     about        String
@@ -41,6 +41,7 @@ model Pet {
     energy       Int
     independency String
     environment  String
+    created_at   DateTime @default(now())
 
     petRequirements PetRequirements[]
     petPictures     PetPictures[]

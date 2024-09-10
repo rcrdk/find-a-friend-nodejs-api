@@ -1,12 +1,15 @@
 <!--
 
 TODO:
-- Create prisma seeds
-  - Three users
-  - 5 pets each
+
+Create, Show:
+- Pet Images: connect with bucket
+- Pet Requirements: array of strings
+
 - Prepare and generate insomnia json
+- Update Readme
 - Submit to Rocketseat
-- Do some extras
+- Do some extras ⬇️
 
 -->
 
@@ -42,22 +45,23 @@ npx prisma migrate dev
 
 ## 📋 Business Rules and 
 
-<!--
-
-Extra: 
-- Update organization profile
-- Update pet
-- Remove pet
-- Visibility of pet
-- Get all organization pets
-
+<!-- 
+- Organization
+  - Get Profile
+  - Update Profile
+  - Get Pets: visible not visible
+- Pet
+  - Update
+  - Remove
+  - Toggle visibility
+  - Search: add search by organization
 -->
 
 ### Functional Requirements
 - [x] It should be able to add a pet;
 - [x] It should be able to get all available pets in a city;
 - [x] It should be able to filter pets by it's carecteristics;
-- [ ] It should be able to show details of a pet for adoption;
+- [x] It should be able to show details of a pet for adoption;
 - [x] It should be able to register as a NGO (Non-Governamental Organization);
 - [x] It should be able to authenticate as a NGO;
 
@@ -72,5 +76,5 @@ Extra:
 ### Non Functional Requirements
 - [x] The user password must be encypted;
 - [x] All application data must be persisted on a postgreSQL database;
-- [ ] All data listed should be paginated with 20 itens by page;
+- [x] All data listed should be paginated with 20 itens by page;
 - [x] The user must be identified by a JWT (JSON Web Token);
