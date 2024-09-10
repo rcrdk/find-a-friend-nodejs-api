@@ -18,4 +18,6 @@ export interface PetsRepository {
 	findById(id: string): Promise<PetWithUser | null>
 	findManyByFilters(filters: FindManyByFiltersParams): Promise<PetWithUser[]>
 	create(data: Prisma.PetUncheckedCreateInput): Promise<Pet>
+	// update(id: string, data: Prisma.PetUncheckedUpdateInput): Promise<PetWithUser>
+	delete(id: string): Promise<PetWithUser>
 }

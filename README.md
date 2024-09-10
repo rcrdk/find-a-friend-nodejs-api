@@ -1,11 +1,6 @@
 <!--
 
 TODO:
-
-Create, Show:
-- Pet Images: connect with bucket
-- Pet Requirements: array of strings
-
 - Prepare and generate insomnia json
 - Update Readme
 - Submit to Rocketseat
@@ -46,24 +41,21 @@ npx prisma migrate dev
 ## 📋 Business Rules and 
 
 <!-- 
-- Organization
-  - Get Profile
-  - Update Profile
-  - Get Pets: visible not visible
 - Pet
-  - Update
-  - Remove
-  - Toggle visibility
   - Search: add search by organization
 -->
 
 ### Functional Requirements
 - [x] It should be able to add a pet;
+- [ ] It should be able to update a pet;
+- [x] It should be able to remove a pet;
 - [x] It should be able to get all available pets in a city;
 - [x] It should be able to filter pets by it's carecteristics;
 - [x] It should be able to show details of a pet for adoption;
 - [x] It should be able to register as a NGO (Non-Governamental Organization);
 - [x] It should be able to authenticate as a NGO;
+- [x] It should be able to show details of a NGO;
+- [ ] It should be able to update a NGO profile;
 
 ### Business Rules
 - [x] To fetch all pets, a state and a city must be provied;
@@ -72,6 +64,8 @@ npx prisma migrate dev
 - [x] A pet must be connected with a NGO;
 - [x] The user who wishes to adopt, must contact the NGO by their WhatsApp number;
 - [x] For a NGO access the app as admin, they must be authenticated;
+- [ ] A NGO can only update their own pets;
+- [x] A NGO can only delete their own pets;
 
 ### Non Functional Requirements
 - [x] The user password must be encypted;

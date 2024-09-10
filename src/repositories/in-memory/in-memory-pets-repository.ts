@@ -103,4 +103,18 @@ export class InMemoryPetsRepository implements PetsRepository {
 
 		return pet
 	}
+
+	// update pet
+
+	async delete(id: string) {
+		const petIndex = this.items.findIndex((pet) => pet.id === id)
+		const pet = this.items[petIndex]
+
+		this.items.slice(petIndex, 1)
+
+		return {
+			...pet,
+			user: this.user,
+		}
+	}
 }

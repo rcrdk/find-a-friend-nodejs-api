@@ -61,4 +61,29 @@ export class PrismaPetsRepository implements PetsRepository {
 
 		return pet
 	}
+
+	// async update(id: string, data: Prisma.PetUncheckedUpdateInput) {
+	// 	const pet = await prisma.pet.update({
+	// 		where: {
+	// 			id,
+	// 		},
+	// 		data,
+	// 		include: { user: true },
+	// 	})
+
+	// 	return pet
+	// }
+
+	async delete(id: string) {
+		const pet = await prisma.pet.delete({
+			where: {
+				id,
+			},
+			include: { user: true },
+		})
+
+		if (pet) pet.user.password_hash = ''
+
+		return pet
+	}
 }

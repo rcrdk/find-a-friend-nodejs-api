@@ -1,9 +1,11 @@
-import { FastifyReply, FastifyRequest } from 'fastify'
+import { FastifyRequest } from 'fastify'
 
-export async function verifyJWT(request: FastifyRequest, reply: FastifyReply) {
+import { UnauthorizedError } from '@/errors/unauthorized-error'
+
+export async function verifyJWT(request: FastifyRequest) {
 	try {
 		await request.jwtVerify()
 	} catch (err) {
-		return reply.status(401).send({ message: 'Unauthorized.' })
+		throw new UnauthorizedError()
 	}
 }

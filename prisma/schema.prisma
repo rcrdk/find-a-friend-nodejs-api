@@ -43,31 +43,8 @@ model Pet {
     environment  String
     created_at   DateTime @default(now())
 
-    petRequirements PetRequirements[]
-    petPictures     PetPictures[]
-
     user    User   @relation(fields: [user_id], references: [id])
     user_id String
 
     @@map("pets")
-}
-
-model PetRequirements {
-    id          String @id @default(uuid())
-    description String
-
-    pet    Pet    @relation(fields: [pet_id], references: [id])
-    pet_id String
-
-    @@map("pets_requirements")
-}
-
-model PetPictures {
-    id    String @id @default(uuid())
-    image String
-
-    pet   Pet    @relation(fields: [pt_id], references: [id])
-    pt_id String
-
-    @@map("pets_pictures")
 }

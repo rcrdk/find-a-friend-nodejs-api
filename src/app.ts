@@ -8,6 +8,7 @@ import { petsRoutes } from './controllers/pets/routes'
 import { usersRoutes } from './controllers/users/routes'
 import { env } from './env'
 import { ResourceNotFoundError } from './errors/resource-not-found-error'
+import { UnauthorizedError } from './errors/unauthorized-error'
 
 export const app = fastify()
 
@@ -40,7 +41,11 @@ app.setErrorHandler((error, _, reply) => {
 	}
 
 	if (error instanceof ResourceNotFoundError) {
-		return reply.status(404).send({ message: 'Resource not found.' })
+		return reply.status(404).send({ message: error.message })
+	}
+
+	if (error instanceof UnauthorizedError) {
+		return reply.status(401).send({ message: error.message })
 	}
 
 	if (env.NODE_ENV !== 'production') {
