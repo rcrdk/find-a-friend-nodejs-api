@@ -1,9 +1,3 @@
-<!--
-TO-DO:
-- Update Readme
-- Submit to Rocketseat
--->
-
 # 🐩 Find a Friend API
 I developed this project as a challenge of my latest studies on Node lessons at [Rocketseat](https://www.rocketseat.com.br).
 
@@ -16,7 +10,13 @@ I developed this project as a challenge of my latest studies on Node lessons at 
 
 
 ## 🖥️ Project
-<!-- WRITE ABOUT THE PROJECT -->
+This project was developed as a challenge to practice the development of a API REST in Node.js with Fastify applying concepts as SOLID, design patterns (factory pattern, repositories pattern) and clean architecture.
+
+To get started with the flow of the application, you can register a new user and authenticate or used the seeded data. You should be able to get a user profile and updated it if you're authenticated, also you can finda list o users by location (to be used on filters on front-end); Authenticated users can create, update and delete their own pets; For public access it's possible to find pets by location (required) and pets caracteristics (optional), it's possible to show pet profile for adoption.
+
+In this project it was ensured that all application works by running all test over testing simply with routes on Insomnia. It was applied unit tests to services layer and E2E test on controllers. It was used Vitest along with supertest to make requests. It was implemented GitHub Actions to run unit tests on push and E2E tests on pull requests.
+
+Prisma was used as ORM and client alongside with PostgreSQL database to mage with data. To make the authentication it was used JWT (JSON Web Token) to persist user information with security into the application. 
 
 ## ⚙️ Get started
 ```zsh
