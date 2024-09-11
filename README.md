@@ -1,6 +1,5 @@
 <!--
 TO-DO:
-- Prepare and generate insomnia json
 - Update Readme
 - Submit to Rocketseat
 -->
@@ -30,11 +29,9 @@ npx prisma migrate dev
 ```
 
 ## 🔗 Routes
-<!-- GENERATE AND TEST -->
-<!-- [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=Ignite%20Node.js%3A%20Find%20a%20Friend%20API%0A&uri=https://raw.githubusercontent.com/rcrdk/find-a-friend-nodejs-api/main/insomnia.json) -->
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=Ignite%20Node.js%3A%20Find%20a%20Friend%20API%0A&uri=https://raw.githubusercontent.com/rcrdk/find-a-friend-nodejs-api/main/insomnia.json)
 
 ## 📋 Business Rules and Requirements
-
 <!-- 
 COULD BE DONE:
 - Implement pet requirements
