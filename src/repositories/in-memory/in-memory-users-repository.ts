@@ -2,7 +2,7 @@ import { randomUUID } from 'node:crypto'
 
 import { Prisma, User } from '@prisma/client'
 
-import { UsersRepository } from '../users-repository'
+import { FindManyByLocation, UsersRepository } from '../users-repository'
 
 export class InMemoryUsersRepository implements UsersRepository {
 	public items: User[] = []
@@ -25,6 +25,27 @@ export class InMemoryUsersRepository implements UsersRepository {
 		}
 
 		return user
+	}
+
+	async findManyByLocation(filters: FindManyByLocation) {
+		const filterByLocation = this.items.filter((user) => {
+			const filterState = user.state === filters.state
+			const filterCity = user.city === filters.city
+
+			return filterState && filterCity
+		})
+
+		const pickProperties = filterByLocation.map(
+			({ id, name, organization }) => {
+				return {
+					id,
+					name,
+					organization,
+				}
+			},
+		)
+
+		return pickProperties
 	}
 
 	async create(data: Prisma.UserCreateInput) {

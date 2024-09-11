@@ -51,7 +51,7 @@ npx prisma migrate dev
 - [x] It should be able to authenticate as a NGO;
 - [x] It should be able to show details of a NGO;
 - [ ] It should be able to update a NGO profile;
-- [ ] It should be able to fetch all NGO's in a city;
+- [x] It should be able to fetch all NGO's in a city;
 
 ### Business Rules
 - [x] To fetch all pets, a state and a city must be provied;
