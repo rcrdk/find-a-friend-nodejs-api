@@ -52,7 +52,7 @@ COULD BE DONE:
 - [x] It should be able to register as a NGO (Non-Governamental Organization);
 - [x] It should be able to authenticate as a NGO;
 - [x] It should be able to show details of a NGO;
-- [ ] It should be able to update a NGO profile;
+- [x] It should be able to update a NGO profile;
 - [x] It should be able to fetch all NGO's in a city;
 
 ### Business Rules
@@ -62,7 +62,7 @@ COULD BE DONE:
 - [x] A pet must be connected with a NGO;
 - [x] The user who wishes to adopt, must contact the NGO by their WhatsApp number;
 - [x] For a NGO access the app as admin, they must be authenticated;
-- [ ] A NGO can only update their own profile;
+- [x] A NGO can only update their own profile;
 - [x] A NGO can only update their own pets;
 - [x] A NGO can only delete their own pets;
 
