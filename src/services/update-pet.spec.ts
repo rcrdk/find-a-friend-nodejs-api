@@ -13,7 +13,7 @@ describe('update pet service', () => {
 		sut = new UpdatePetService(petsRepository)
 	})
 
-	it('should be able to update a new pet', async () => {
+	it('should be able to update a pet', async () => {
 		const { id: createPetId, user_id: createdPetUserId } =
 			await petsRepository.create({
 				user_id: 'user-id',

@@ -8,6 +8,10 @@ export class PrismaUsersRepository implements UsersRepository {
 	async findById(id: string) {
 		const user = await prisma.user.findUnique({ where: { id } })
 
+		if (user) {
+			user.password_hash = ''
+		}
+
 		return user
 	}
 
@@ -41,6 +45,17 @@ export class PrismaUsersRepository implements UsersRepository {
 
 	async create(data: Prisma.UserCreateInput) {
 		const user = await prisma.user.create({
+			data,
+		})
+
+		return user
+	}
+
+	async update(id: string, data: Prisma.UserUncheckedCreateInput) {
+		const user = await prisma.user.update({
+			where: {
+				id,
+			},
 			data,
 		})
 

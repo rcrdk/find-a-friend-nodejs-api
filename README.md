@@ -1,14 +1,9 @@
 <!--
-
-TODO:
+TO-DO:
 - Prepare and generate insomnia json
 - Update Readme
 - Submit to Rocketseat
-- Do some extras ⬇️
-
 -->
-
-<!-- https://efficient-sloth-d85.notion.site/Desafio-03-0b927eb32dbd4f21ab40224ffdf6cf19 -->
 
 # 🐩 Find a Friend API
 I developed this project as a challenge of my latest studies on Node lessons at [Rocketseat](https://www.rocketseat.com.br).
@@ -40,6 +35,13 @@ npx prisma migrate dev
 
 ## 📋 Business Rules and Requirements
 
+<!-- 
+COULD BE DONE:
+- Implement pet requirements
+- Implement pet image gallery with AWS
+- Error watcher with Sentry
+ -->
+
 ### Functional Requirements
 - [x] It should be able to add a pet;
 - [x] It should be able to update a pet;
@@ -50,7 +52,7 @@ npx prisma migrate dev
 - [x] It should be able to register as a NGO (Non-Governamental Organization);
 - [x] It should be able to authenticate as a NGO;
 - [x] It should be able to show details of a NGO;
-- [ ] It should be able to update a NGO profile;
+- [x] It should be able to update a NGO profile;
 - [x] It should be able to fetch all NGO's in a city;
 
 ### Business Rules
@@ -60,7 +62,7 @@ npx prisma migrate dev
 - [x] A pet must be connected with a NGO;
 - [x] The user who wishes to adopt, must contact the NGO by their WhatsApp number;
 - [x] For a NGO access the app as admin, they must be authenticated;
-- [ ] A NGO can only update their own profile;
+- [x] A NGO can only update their own profile;
 - [x] A NGO can only update their own pets;
 - [x] A NGO can only delete their own pets;
 
