@@ -16,10 +16,10 @@ describe('get user profile (e2e)', () => {
 	it('should be able to get user profile', async () => {
 		const { id } = await createAndAuthenticateUser(app)
 
-		const getUserProfileResponse = await request(app.server).get(`/users/${id}`)
+		const response = await request(app.server).get(`/users/${id}`)
 
-		expect(getUserProfileResponse.statusCode).toEqual(200)
-		expect(getUserProfileResponse.body.user).toEqual(
+		expect(response.statusCode).toEqual(200)
+		expect(response.body.user).toEqual(
 			expect.objectContaining({ name: 'John Doe' }),
 		)
 	})

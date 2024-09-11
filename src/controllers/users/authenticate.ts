@@ -53,6 +53,8 @@ export async function authenticate(
 			return reply.status(400).send({ message: error.message })
 		}
 
+		console.log(error)
+
 		throw error
 	}
 }

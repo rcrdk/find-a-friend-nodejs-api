@@ -14,4 +14,5 @@ export interface UsersRepository {
 		filters: FindManyByLocation,
 	): Promise<UserNameOrganization[]>
 	create(data: Prisma.UserCreateInput): Promise<User>
+	update(id: string, data: Prisma.UserUncheckedCreateInput): Promise<User>
 }

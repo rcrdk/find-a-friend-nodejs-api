@@ -1,14 +1,9 @@
 <!--
-
-TODO:
+TO-DO:
 - Prepare and generate insomnia json
 - Update Readme
 - Submit to Rocketseat
-- Do some extras ⬇️
-
 -->
-
-<!-- https://efficient-sloth-d85.notion.site/Desafio-03-0b927eb32dbd4f21ab40224ffdf6cf19 -->
 
 # 🐩 Find a Friend API
 I developed this project as a challenge of my latest studies on Node lessons at [Rocketseat](https://www.rocketseat.com.br).
@@ -39,6 +34,13 @@ npx prisma migrate dev
 <!-- [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=Ignite%20Node.js%3A%20Find%20a%20Friend%20API%0A&uri=https://raw.githubusercontent.com/rcrdk/find-a-friend-nodejs-api/main/insomnia.json) -->
 
 ## 📋 Business Rules and Requirements
+
+<!-- 
+COULD BE DONE:
+- Implement pet requirements
+- Implement pet image gallery with AWS
+- Error watcher with Sentry
+ -->
 
 ### Functional Requirements
 - [x] It should be able to add a pet;

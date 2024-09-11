@@ -15,20 +15,19 @@ export async function create(request: FastifyRequest, reply: FastifyReply) {
 		environment: z.string(),
 	})
 
-	const { name, about, kindOf, age, size, energy, independency, environment } =
-		createPetBodySchema.parse(request.body)
+	const data = createPetBodySchema.parse(request.body)
 
 	const createPetService = makeCreatePetService()
 
 	await createPetService.handle({
-		name,
-		about,
-		kindOf,
-		age,
-		size,
-		energy,
-		independency,
-		environment,
+		name: data.name,
+		about: data.about,
+		kindOf: data.kindOf,
+		age: data.age,
+		size: data.size,
+		energy: data.energy,
+		independency: data.independency,
+		environment: data.environment,
 		userId: request.user.sub,
 	})
 
