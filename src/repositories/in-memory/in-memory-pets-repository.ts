@@ -74,11 +74,16 @@ export class InMemoryPetsRepository implements PetsRepository {
 			return filters.kindOf === pet.kind_of
 		})
 
+		const filterByUser = filterByKind.filter((pet) => {
+			if (!filters.userId) return true
+			return filters.userId === pet.user_id
+		})
+
 		const ITEMS_BY_PAGE = 20
 		const START_USERS_ARRAY_DELIMETER = (filters.page - 1) * ITEMS_BY_PAGE
 		const END_USERS_ARRAY_DELIMETER = filters.page * ITEMS_BY_PAGE
 
-		return filterByKind.slice(
+		return filterByUser.slice(
 			START_USERS_ARRAY_DELIMETER,
 			END_USERS_ARRAY_DELIMETER,
 		)
@@ -104,7 +109,27 @@ export class InMemoryPetsRepository implements PetsRepository {
 		return pet
 	}
 
-	// update pet
+	async update(id: string, data: Prisma.PetUncheckedCreateInput) {
+		const petIndex = this.items.findIndex((pet) => pet.id === id)
+
+		const { id: pet_id, user_id } = this.items[petIndex]
+
+		this.items[petIndex] = {
+			id: pet_id,
+			user_id,
+			name: data.name,
+			kind_of: data.kind_of,
+			about: data.about,
+			age: data.age,
+			size: data.size,
+			energy: data.energy,
+			independency: data.independency,
+			environment: data.environment,
+			created_at: new Date(),
+		}
+
+		return this.items[petIndex]
+	}
 
 	async delete(id: string) {
 		const petIndex = this.items.findIndex((pet) => pet.id === id)

@@ -13,6 +13,7 @@ interface SearchPetsServiceRequest {
 	energy?: number
 	independency?: string
 	environment?: string
+	userId?: string
 }
 
 interface SearchPetsServiceResponse {
@@ -32,6 +33,7 @@ export class SearchPetsService {
 		energy,
 		independency,
 		environment,
+		userId,
 	}: SearchPetsServiceRequest): Promise<SearchPetsServiceResponse> {
 		const pets = await this.petsRepository.findManyByFilters({
 			page,
@@ -43,6 +45,7 @@ export class SearchPetsService {
 			energy,
 			independency,
 			environment,
+			userId,
 		})
 
 		return {

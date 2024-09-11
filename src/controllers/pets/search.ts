@@ -14,6 +14,7 @@ export async function search(request: FastifyRequest, reply: FastifyReply) {
 		size: z.string().optional(),
 		independency: z.string().optional(),
 		environment: z.string().optional(),
+		user_id: z.string().uuid().optional(),
 	})
 
 	const {
@@ -26,6 +27,7 @@ export async function search(request: FastifyRequest, reply: FastifyReply) {
 		energy,
 		independency,
 		environment,
+		user_id,
 	} = searchPetsQuerySchema.parse(request.query)
 
 	const searchPetsService = makeSearchPetsService()
@@ -40,6 +42,7 @@ export async function search(request: FastifyRequest, reply: FastifyReply) {
 		energy,
 		independency,
 		environment,
+		userId: user_id,
 	})
 
 	return reply.status(200).send({ pets })

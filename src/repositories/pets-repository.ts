@@ -12,12 +12,13 @@ export interface FindManyByFiltersParams {
 	independency?: string
 	environment?: string
 	kindOf?: PetType
+	userId?: string
 }
 
 export interface PetsRepository {
 	findById(id: string): Promise<PetWithUser | null>
 	findManyByFilters(filters: FindManyByFiltersParams): Promise<PetWithUser[]>
 	create(data: Prisma.PetUncheckedCreateInput): Promise<Pet>
-	// update(id: string, data: Prisma.PetUncheckedUpdateInput): Promise<PetWithUser>
+	update(id: string, data: Prisma.PetUncheckedCreateInput): Promise<PetWithUser>
 	delete(id: string): Promise<PetWithUser>
 }

@@ -35,6 +35,21 @@ async function main() {
 		},
 	})
 
+	const { id: user3Id } = await prisma.user.create({
+		data: {
+			name: 'Janis Dont',
+			organization: 'Janis Dont Organization',
+			email: 'janis@dont.com',
+			password_hash: await hash('123456', 6),
+			whatsapp_number: '(00) 00000-0000',
+			address: 'Avenue Janet Jackson, 00, Room 00',
+			zip_code: '89120-000',
+			city: 'Timbó',
+			state: 'SC',
+			neighborhood: 'Centro',
+		},
+	})
+
 	// create pets
 	await prisma.pet.createMany({
 		data: [
@@ -108,6 +123,30 @@ async function main() {
 				independency: 'low',
 				size: 'small',
 				user_id: user2Id,
+				created_at: new Date(),
+			},
+			{
+				name: 'Snoopy',
+				about: 'He is active.',
+				kind_of: 'dog',
+				age: 'old',
+				energy: 3,
+				environment: 'all',
+				independency: 'medium',
+				size: 'small',
+				user_id: user3Id,
+				created_at: new Date(),
+			},
+			{
+				name: 'Toddy',
+				about: 'He is active.',
+				kind_of: 'cat',
+				age: 'adult',
+				energy: 4,
+				environment: 'all',
+				independency: 'high',
+				size: 'small',
+				user_id: user3Id,
 				created_at: new Date(),
 			},
 		],

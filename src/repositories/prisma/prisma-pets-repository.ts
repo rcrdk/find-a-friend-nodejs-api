@@ -41,6 +41,7 @@ export class PrismaPetsRepository implements PetsRepository {
 				independency: filters.independency,
 				environment: filters.environment,
 				kind_of: filters.kindOf,
+				user_id: filters.userId,
 			},
 			take: ITEMS_BY_PAGE,
 			skip: SKIP_PREV_PAGES_ITEMS,
@@ -62,17 +63,26 @@ export class PrismaPetsRepository implements PetsRepository {
 		return pet
 	}
 
-	// async update(id: string, data: Prisma.PetUncheckedUpdateInput) {
-	// 	const pet = await prisma.pet.update({
-	// 		where: {
-	// 			id,
-	// 		},
-	// 		data,
-	// 		include: { user: true },
-	// 	})
+	async update(id: string, data: Prisma.PetUncheckedCreateInput) {
+		const pet = await prisma.pet.update({
+			where: {
+				id,
+			},
+			data: {
+				name: data.name,
+				about: data.about,
+				kind_of: data.kind_of,
+				age: data.age,
+				size: data.size,
+				energy: data.energy,
+				independency: data.independency,
+				environment: data.environment,
+			},
+			include: { user: true },
+		})
 
-	// 	return pet
-	// }
+		return pet
+	}
 
 	async delete(id: string) {
 		const pet = await prisma.pet.delete({

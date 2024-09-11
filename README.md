@@ -38,16 +38,11 @@ npx prisma migrate dev
 <!-- GENERATE AND TEST -->
 <!-- [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=Ignite%20Node.js%3A%20Find%20a%20Friend%20API%0A&uri=https://raw.githubusercontent.com/rcrdk/find-a-friend-nodejs-api/main/insomnia.json) -->
 
-## 📋 Business Rules and 
-
-<!-- 
-- Pet
-  - Search: add search by organization
--->
+## 📋 Business Rules and Requirements
 
 ### Functional Requirements
 - [x] It should be able to add a pet;
-- [ ] It should be able to update a pet;
+- [x] It should be able to update a pet;
 - [x] It should be able to remove a pet;
 - [x] It should be able to get all available pets in a city;
 - [x] It should be able to filter pets by it's carecteristics;
@@ -56,6 +51,7 @@ npx prisma migrate dev
 - [x] It should be able to authenticate as a NGO;
 - [x] It should be able to show details of a NGO;
 - [ ] It should be able to update a NGO profile;
+- [ ] It should be able to fetch all NGO's in a city;
 
 ### Business Rules
 - [x] To fetch all pets, a state and a city must be provied;
@@ -64,7 +60,8 @@ npx prisma migrate dev
 - [x] A pet must be connected with a NGO;
 - [x] The user who wishes to adopt, must contact the NGO by their WhatsApp number;
 - [x] For a NGO access the app as admin, they must be authenticated;
-- [ ] A NGO can only update their own pets;
+- [ ] A NGO can only update their own profile;
+- [x] A NGO can only update their own pets;
 - [x] A NGO can only delete their own pets;
 
 ### Non Functional Requirements
